@@ -31,7 +31,11 @@ export const TaskForm = (props) => {
 
     useEffect(() => {
         getCategories()
-        .then(getTaskById(props.match.params.taskId))
+        if (props.match.params.taskId) {
+        getTaskById(props.match.params.taskId)
+        }
+        
+        // console.log(props.match.params.taskId)
     }, [])
 
     // console.log(categories)
@@ -72,7 +76,7 @@ export const TaskForm = (props) => {
         }
     }
     console.log(props)
-    //
+    //if the props.location.state exist, then chosen task = props.location.state.chosenTask, If props.location.state dosenot exist then chosenTask= empty object{}
     const chosenTask = props.location.state ? props.location.state.chosenTask: {}
 
     return (

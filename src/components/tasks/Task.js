@@ -38,7 +38,7 @@ export const Task = ({ task }) => {
           className="btn--release"
           onClick={() => {
             deleteTask(task.id).then(() => {
-              history.push("/tasklist");
+              history.push("/tasks");
             });
           }}
         >

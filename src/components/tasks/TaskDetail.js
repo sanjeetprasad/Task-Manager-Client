@@ -14,17 +14,16 @@ export const TaskDetails = (props) => {
     const taskId = parseInt(props.match.params.id);
     // console.log("props", props)
     getTaskById(taskId)
-      // Need below .then if you do not setPost in the postProvider
+      // Need below .then if you do not setTask in the taskProvider
       .then(console.log(task))
   }, [tasks]);
 
-// const removeTag=(taskId, tt) =>{
-//   const tagId = {tagId : tt}
-//   deletetaskTag(taskId, tagId)
+const removeTag=(taskId, tt) =>{
+  const tagId = {tagId : tt}
+  deleteTaskTag(taskId, tagId)
 
-// }
-// console.log(task.tags)
-// console.log(task)
+}
+console.log(task)
 
   return (
     <>
@@ -36,7 +35,7 @@ export const TaskDetails = (props) => {
         <div className="task__description">{task.description}</div>
         <h3 className="task__dateTime">{task.dueDateTime}</h3>
         <h3>Tags</h3>
-        {/* <Link to={{
+        <Link to={{
                 pathname: `/tasks/${task.id}/addtag`,
                 state: { chosenTask: task }}}>Add a Tag</Link>
         {
@@ -45,9 +44,9 @@ export const TaskDetails = (props) => {
               <div>{tt.label}<button onClick={()=>{removeTag(task.id, tt.id)}}>Delete Tag From Task</button></div>
             )
           }) : <></>
-        } */}
+        }
         
-        <button
+        {/* <button
           onClick={() => {
             props.history.push(`/tasklist/edit/${task.id}`);
           }}
@@ -64,7 +63,7 @@ export const TaskDetails = (props) => {
           }}
         >
           Delete Task
-        </button>
+        </button> */}
  
         
       </section>

@@ -22,6 +22,7 @@ export const TaskProvider = (props) => {
 
   //method to get task by the id from server
   const getTaskById = (id) => {
+    console.log(id)
     return fetch(`http://localhost:8000/tasks/${id}`, {
       headers: {
         Authorization: `Token ${localStorage.getItem("lu_token")}`,
@@ -79,7 +80,7 @@ export const TaskProvider = (props) => {
   }
 
   const addTaskTag = (taskId, tagId) =>{
-    return fetch (`http://localhost:8000/posts/${taskId}/tag`, {
+    return fetch (`http://localhost:8000/tasks/${taskId}/tag`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",

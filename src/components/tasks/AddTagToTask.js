@@ -28,7 +28,7 @@ return(
                     tags.map((t)=>{
                         if(!taskTagLabel.find(tt=>parseInt(tt) === parseInt(t.id)))
                       return(
-                          <div>{t.label}<button onClick={()=>{addTaskTag(task.id, {tagId:t.id})}}>Add Tag To Task</button></div>
+                          <div>{t.label}<button onClick={()=>{addTaskTag(task.id, {tagId:parseInt(t.id)})}}>Add Tag To Task</button></div>
                       )
                     }
                     )
