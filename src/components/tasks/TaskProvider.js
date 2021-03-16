@@ -1,14 +1,14 @@
 import React from "react";
 import { useState } from "react";
 
-//This module is responsible for all methods for fetching posts from server
+//This module is responsible for all methods for fetching tasks from server
 export const TaskContext = React.createContext();
 
 export const TaskProvider = (props) => {
   const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState({});
 
-  //method to get posts from server
+  //method to get tasks from server
   const getTasks = () => {
     return fetch("http://localhost:8000/tasks", {
       headers: {
@@ -20,7 +20,7 @@ export const TaskProvider = (props) => {
       .then(console.log(tasks));
   };
 
-  //method to get post by the id from server
+  //method to get task by the id from server
   const getTaskById = (id) => {
     return fetch(`http://localhost:8000/tasks/${id}`, {
       headers: {
@@ -30,24 +30,9 @@ export const TaskProvider = (props) => {
     .then(setTask)
   };
 
-  //method to get posts by the user id that created the post from server
-  const getTasksByUserId = (userId) => {
-    userId = localStorage.getItem("lu_token");
-    return fetch(
-      `http://localhost:8000/tasks?user_id=${localStorage.getItem(
-        "lu_token"
-      )}`,
-      {
-        headers: {
-          Authorization: `Token ${localStorage.getItem("lu_token")}`,
-        },
-      }
-    )
-      .then((res) => res.json())
-      .then(setTasks);
-  };
 
-  //method to delete posts from server
+
+  //method to delete tasks from server
   const deleteTask = (id) => {
     return fetch(`http://localhost:8000/tasks/${id}`, {
       method: "DELETE",
@@ -57,7 +42,7 @@ export const TaskProvider = (props) => {
     }).then(getTasks);
   };
 
-  //method to create a post to add to the server
+  //method to create a task to add to the server
   const addTask = (task) => {
     return fetch("http://localhost:8000/tasks", {
       method: "POST",
@@ -65,11 +50,11 @@ export const TaskProvider = (props) => {
         "Content-Type": "application/json",
         Authorization: `Token ${localStorage.getItem("lu_token")}`,
       },
-      body: JSON.stringify(post),
+      body: JSON.stringify(task),
     }).then((res) => res.json());
   };
 
-  //method to edit posts on the server
+  //method to edit tasks on the server
   const updateTask = (newTask) => {
     return fetch(`http://localhost:8000/tasks/${newTask.id}`, {
       method: "PUT",
@@ -90,7 +75,7 @@ export const TaskProvider = (props) => {
       },
       body: JSON.stringify(tagId)
     })
-    .then(getPostById(taskId))
+    .then(getTaskById(taskId))
   }
 
   const addTaskTag = (taskId, tagId) =>{
@@ -103,27 +88,26 @@ export const TaskProvider = (props) => {
       body: JSON.stringify(tagId)
     }
     )
-    .then(getPostById(taskId))
+    .then(getTaskById(taskId))
   }
 
   return (
-    <PostContext.Provider
+    <TaskContext.Provider
       value={{
         task,
         setTask,
-        Tasks,
+        tasks,
         setTasks,
         getTasks,
         getTaskById,
         deleteTask,
         addTask,
-        getTasksByUserId,
         updateTask,
         deleteTaskTag,
         addTaskTag
       }}
     >
       {props.children}
-    </PostContext.Provider>
+    </TaskContext.Provider>
   );
 };
