@@ -11,6 +11,7 @@ import {TaskList} from "./tasks/TaskList";
 import {TaskForm} from "./tasks/TaskForm";
 import {TaskDetails} from "./tasks/TaskDetail";
 import {AddTagToTask} from "./tasks/AddTagToTask"
+import {SimpleTaskList} from "./tasks/SimpleTaskList"
 
 
 export const ApplicationViews = (props) => (
@@ -48,6 +49,11 @@ export const ApplicationViews = (props) => (
                     path="/tasklist/edit/:taskId(\d+)"
                     render={(props) => <TaskForm {...props} />}
                 />
+                <Route
+                    path="/tasklist"
+                    render={(props) => <SimpleTaskList {...props} />}
+                />
+
               </TagProvider>
             </TaskProvider>
         </CategoryProvider>
