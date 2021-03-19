@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState, useRef } from "react";
 import { TaskContext } from "./TaskProvider";
 import { TagContext } from "../tags/TagProvider";
 import { Link } from "react-router-dom"
+import "./Task.css"
 
 //This module renders the detail page for each task
 
@@ -28,7 +29,7 @@ console.log(task)
   return (
     <>
 
-      <section className="task">
+      <section className="taskDetail">
         <h3>Task Detail</h3>
         <h3 className="task__dateTime">{task.createDateTime}</h3>
         <h3 className="task__title">{task.title}</h3>

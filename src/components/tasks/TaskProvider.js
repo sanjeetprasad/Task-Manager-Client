@@ -20,6 +20,16 @@ export const TaskProvider = (props) => {
       .then(console.log(tasks));
   };
 
+  const getTasksByCategoryId = (id) => {
+    return fetch(`http://localhost:8000/tasks?category_id=${id}`, {
+      headers: {
+        Authorization: `Token ${localStorage.getItem("lu_token")}`,
+      },
+    })
+      .then((res) => res.json())
+
+  };
+
   //method to get task by the id from server
   const getTaskById = (id) => {
     console.log(id)
@@ -92,6 +102,7 @@ export const TaskProvider = (props) => {
     .then(getTaskById(taskId))
   }
 
+
   return (
     <TaskContext.Provider
       value={{
@@ -105,7 +116,8 @@ export const TaskProvider = (props) => {
         addTask,
         updateTask,
         deleteTaskTag,
-        addTaskTag
+        addTaskTag,
+        getTasksByCategoryId
       }}
     >
       {props.children}

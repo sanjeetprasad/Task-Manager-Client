@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import { Link, useHistory } from "react-router-dom";
 import {TaskContext} from "./TaskProvider"
+import "./Task.css"
 
 //This module is responsible for creating the single HTML representation of a post
 
@@ -10,19 +11,21 @@ export const Task = ({ task }) => {
     
     return (
         <section className="taskCard">
-            <h3>
+          <div>
+            <h3 className="link">
                 <Link to={{ pathname: `/tasks/${task.id}` }}>
                     Title: {task.title}
                 </Link>
             </h3>
-            <p>Author: {task.user_id}</p>
+            {/* <p>Author: {task.user_id}</p> */}
             <p>Create Date & Time: {task.create_date_time}</p>
-            <p>Category: {task.category_id}</p>
-            <p>Title: {task.Title}</p>
+            <p className="category">Category: {task.category.label}</p>
+            <p>Title: {task.title}</p>
             <p>Description: {task.description}</p>
             <p>Due Date & Time: {task.due_date_time}</p>
-            
-            <button>
+        </div>
+        <div>   
+            <button className="taskListB">
             <Link
           to={{
 
@@ -33,17 +36,19 @@ export const Task = ({ task }) => {
           Edit Task!
         </Link>
         </button>
-
+        </div>
+        <div>
         <button
-          className="btn--release"
+          className="taskListB"
           onClick={() => {
             deleteTask(task.id).then(() => {
               history.push("/tasks");
             });
           }}
         >
-          Delete Task
+          Complete The Task
         </button>
+        </div>
         </section>)
 
 }

@@ -1,6 +1,7 @@
 import React, { useContext, useRef, useState, useEffect } from "react"
 import { TaskContext } from "./TaskProvider"
 import { CategoryContext } from "../categories/categoryProvider"
+import "./Task.css"
 
 // This module renders the create post form and edit post form
 export const TaskForm = (props) => {
@@ -118,7 +119,7 @@ export const TaskForm = (props) => {
                     <textarea type="text" id="taskDescription" ref={description}
                         required autoFocus className="form-control"
                         proptype="varchar"
-                        rows="5" cols="70"
+                        rows="8" cols="130"
                         placeholder="Task Description"
                         defaultValue={chosenTask.description}
                         onChange={handleControlledInputChange}
@@ -130,7 +131,7 @@ export const TaskForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="createDateTime">Create Date & Time: </label>
-                    <input type="date" id="createDateTime" ref={createDateTime}
+                    <input type="datetime-local" id="createDateTime" ref={createDateTime}
                         required autoFocus className="form-control"
                         proptype="varchar"
                         placeholder="Create Date & Time"
@@ -144,7 +145,7 @@ export const TaskForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="dueDateTime">Due Date & Time: </label>
-                    <input type="date" id="dueDateTime" ref={dueDateTime}
+                    <input type="datetime-local" id="dueDateTime" ref={dueDateTime}
                         required autoFocus className="form-control"
                         proptype="varchar"
                         placeholder="Due Date & Time"

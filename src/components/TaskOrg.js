@@ -10,7 +10,7 @@ export const TaskOrg = (props) => (
    
    <>
 
-    <h1>Task manager.</h1>
+    {/* <h1>Task manager.</h1> */}
 
     <Route render={() => {
             if (localStorage.getItem("lu_token")) {

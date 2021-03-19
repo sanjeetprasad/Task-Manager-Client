@@ -2,6 +2,7 @@ import React, {useContext, useRef, useEffect, useState} from "react"
 import {TagContext} from "../tags/TagProvider"
 import {TaskContext} from "./TaskProvider"
 import { Link } from "react-router-dom"
+import "./Task.css"
 
 export const AddTagToTask = (props) =>{
 const {getTaskById, task, addTaskTag} = useContext(TaskContext)
@@ -19,7 +20,7 @@ const taskTagLabel = (task.tags? task.tags.map(tt=>{
 console.log(props)
 
 return(
-    <form>
+    <form className="addTag">
         <Link  to={{
                 pathname: `/tasks/${task.id}`}}>Back To Tasks</Link>
         <fieldset>

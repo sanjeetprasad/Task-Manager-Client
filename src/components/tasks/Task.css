@@ -1,0 +1,120 @@
+/* .simpleTask { */
+    /* border: 3px solid black; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: space-evenly; */
+    /* margin: 2px; */
+
+/* } */
+.simpleTask {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin: 2px;
+}
+.header {
+    color: maroon;
+    text-align: center;
+}
+.SimpleTaskCard {
+    border: 2px solid black;
+    background-color:  rgb(112, 12, 12);
+    color: white;
+    margin: 1px;
+}
+.taskCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    background-color:  rgb(112, 12, 12);
+    color: white;
+    margin: 50px;
+}
+
+
+.taskListB {
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: #fff;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: transform 200ms ease-in-out;
+    border: 2px solid orange;
+    border-radius: 3px;
+    padding: 10px;
+}
+.taskListB:hover {
+    transform: scale(1.1)
+}
+
+
+.taskForm {
+    margin: 20px;
+    padding: 20px;
+    border: 5px black solid;
+    width: 1000px;
+    background-color: maroon;
+    color: white;
+}
+.btn {
+    /* padding: 10px;
+    font-size: 16px; */
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: #fff;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: transform 200ms ease-in-out;
+    border: 2px solid orange;
+    border-radius: 3px;
+    padding: 10px;
+}
+.btn:hover {
+    transform: scale(1.1)
+}
+
+.taskDetail {
+    background-color: maroon;
+    color: white;
+    margin: 100px;
+}
+
+.addTag {
+    background-color: maroon;
+    color: white;
+}
+
+.category {
+    display: inline-block;
+    padding: .5em 2.5em;
+    /* background: #fff; */
+    color: orange;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: transform 200ms ease-in-out;
+    /* border: 2px solid orange; */
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.category:hover {
+    transform: scale(1.1)
+}
+
+.link{
+    color: white;
+}

@@ -12,6 +12,8 @@ import {TaskForm} from "./tasks/TaskForm";
 import {TaskDetails} from "./tasks/TaskDetail";
 import {AddTagToTask} from "./tasks/AddTagToTask"
 import {SimpleTaskList} from "./tasks/SimpleTaskList"
+import {UserDataProvider} from "./user/UserDataProvider"
+import {UserList} from "./user/UserList"
 
 
 export const ApplicationViews = (props) => (
@@ -22,10 +24,15 @@ export const ApplicationViews = (props) => (
         }}>
         </main>
         
-
+        {/* <UserDataProvider> */}
         <CategoryProvider>
             <TaskProvider>
                 <TagProvider>
+                {/* <Route
+                    path="/"
+                    render={(props) => <UserList {...props} />}
+                /> */}
+
                 <Route exact path="/tasks/:taskId(\d+)/addtag" render={(props)=><AddTagToTask {...props}/>}/>
                 <Route
                     exact
@@ -50,6 +57,7 @@ export const ApplicationViews = (props) => (
                     render={(props) => <TaskForm {...props} />}
                 />
                 <Route
+                    exact
                     path="/tasklist"
                     render={(props) => <SimpleTaskList {...props} />}
                 />
@@ -57,6 +65,7 @@ export const ApplicationViews = (props) => (
               </TagProvider>
             </TaskProvider>
         </CategoryProvider>
+        {/* </UserDataProvider> */}
 
         <CategoryProvider>
             <Route

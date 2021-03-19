@@ -1,5 +1,6 @@
 import React, {useContext, useRef} from "react";
 import { TagContext } from "./TagProvider"
+import "./Tag.css"
 
 
 export const Tag = ({ tag, props}) => {
