@@ -1,11 +1,4 @@
-/* .simpleTask { */
-    /* border: 3px solid black; */
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    /* justify-content: space-evenly; */
-    /* margin: 2px; */
 
-/* } */
 .simpleTask {
     display: grid;
     grid-template-columns: auto auto auto auto;

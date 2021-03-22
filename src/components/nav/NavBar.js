@@ -12,42 +12,26 @@ export const NavBar = (props) => {
             <li className="navbar__item">
             <Link className="navbar__link" to="/tasklist">Tasks</Link>
             </li>
-            {/* <li className="navbar__item">
-            <Link className="navbar__link" to="/tasks">Tasks</Link>
-            </li> */}
+
             <li className="navbar__item">
             <Link className="navbar__link" to="/createtask">Create Tasks</Link>
             </li>
-            {/* <li className="navbar__item">
-            <Link className="navbar__link" to="/tasklist">Task List</Link>
-            </li> */}
+
             <li className="navbar__item">
-            <Link className="navbar__link" to="/tasks">Task Manager</Link>
+            <Link className="navbar__link" to="/tasks">Tasks Manager</Link>
             </li>
-            {/* <li className="navbar__item">
-            <Link className="navbar__link" to="/categories">Create Category</Link>
-            </li> */}
+
             <li className="navbar__item">
-            <Link className="navbar__link" to="/tags">Create Tags</Link>
+            <Link className="navbar__link" to="/tags">Tags Manager</Link>
             </li>
-            {
-                (localStorage.getItem("lu_token") !== null) ?
-                    <li className="nav-item">
-                        <button className="nav-link fakeLink"
+            
+                <button className="nav-link"
                             onClick={() => {
                                 localStorage.removeItem("lu_token")
                                 props.history.push({ pathname: "/" })
                             }}
-                        >Logout</button>
-                    </li> :
-                    <>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/login">Login</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/register">Register</Link>
-                        </li>
-                    </>
-            }        </ul>
+                >Logout</button>
+     
+        </ul>
     )
 }

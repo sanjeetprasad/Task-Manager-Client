@@ -24,14 +24,14 @@ export const ApplicationViews = (props) => (
         }}>
         </main>
         
-        {/* <UserDataProvider> */}
+        <UserDataProvider>
         <CategoryProvider>
             <TaskProvider>
                 <TagProvider>
-                {/* <Route
+                <Route
                     path="/"
                     render={(props) => <UserList {...props} />}
-                /> */}
+                />
 
                 <Route exact path="/tasks/:taskId(\d+)/addtag" render={(props)=><AddTagToTask {...props}/>}/>
                 <Route
@@ -65,7 +65,7 @@ export const ApplicationViews = (props) => (
               </TagProvider>
             </TaskProvider>
         </CategoryProvider>
-        {/* </UserDataProvider> */}
+        </UserDataProvider>
 
         <CategoryProvider>
             <Route

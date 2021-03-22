@@ -46,28 +46,8 @@ console.log(task)
             )
           }) : <></>
         }
-        
-        {/* <button
-          onClick={() => {
-            props.history.push(`/tasklist/edit/${task.id}`);
-          }}
-        >
-          Edit Task!
-        </button>
-
-        <button
-          className="btn--release"
-          onClick={() => {
-            deleteTask(task.id).then(() => {
-              props.history.push("/tasks");
-            });
-          }}
-        >
-          Delete Task
-        </button> */}
- 
-        
       </section>
+      
     </>
   );
 };

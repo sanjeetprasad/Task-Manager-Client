@@ -8,9 +8,9 @@ export const UserContext = createContext();
 export const UserDataProvider = (props) => {
   const[user, setUser] = useState({})
 
-  const getCurrentUser = (id)=>{
-    console.log(id)
-    return fetch(`http://localhost:8000/users/${id}`, {
+  const getCurrentUser = ()=>{
+   
+    return fetch(`http://localhost:8000/users`, {
       headers: {
         Authorization: `Token ${localStorage.getItem("lu_token")}`,
       },

@@ -1,21 +1,22 @@
 import React, { useEffect, useContext, useState } from "react";
 import { UserContext } from "./UserDataProvider";
+import "./user.css"
 
 
-export const UserList = () => {
+export const UserList = (props) => {
   const {user, getCurrentUser} = useContext(UserContext)
 
   useEffect(()=> {
-
+      
       getCurrentUser()
 
     }, [])
 
   return (
     <> 
-            <div className="user">
-           <p>Task Manager Welcome You {user.full_name}!</p> 
-            </div>
+        <div className="user">
+           <h2>Welcome back {user.full_name}!</h2> 
+        </div>
     </>
   )
 }
