@@ -1,0 +1,12 @@
+.tag {
+    /* flex-direction: row; */
+    border: 3px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 30px;
+    background-color: maroon;
+    color: white;
+
+    
+}
