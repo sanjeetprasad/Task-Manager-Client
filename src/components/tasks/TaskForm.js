@@ -47,7 +47,6 @@ export const TaskForm = (props) => {
 
             const editedTask = {
                 id: parseInt(props.match.params.taskId),
-                // userId: parseInt(localStorage.getItem("lu_token")),
                 categoryId: parseInt(task.category),
                 title: title.current.value,
                 description: description.current.value,
@@ -58,15 +57,12 @@ export const TaskForm = (props) => {
             updateTask(editedTask).then(props.history.push("/tasks"))
         } else {
             addTask({
-
-                // userId: parseInt(localStorage.getItem("lu_token")),
+                
                 categoryId: parseInt(task.category),
                 title: title.current.value,
                 description: description.current.value,
                 createDateTime: createDateTime.current.value,
                 dueDateTime: dueDateTime.current.value,
-
-                
 
             })
             
